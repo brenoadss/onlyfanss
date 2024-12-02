@@ -242,11 +242,11 @@
 </head>
 <body>
     <div class="container">
-        <img src="" alt="" class="https://ibb.co/yW8yt5B" id="coverImage" onerror="handleImageError(this)">
+        <img src="" alt="Imagem de Capa" class="cover-image" id="coverImage" onerror="handleImageError(this)">
         
         <div class="profile-section">
             <div class="profile-header">
-                <img src="" alt="Gabriela Santana" class="https://ibb.co/BBMsSSZ" id="profileImage" onerror="handleImageError(this)">
+                <img src="" alt="Gabriela Santana" class="profile-image" id="profileImage" onerror="handleImageError(this)">
                 <div class="profile-info">
                     <h1 class="profile-name">Gabriela Santana</h1>
                     <p class="profile-username">
@@ -296,92 +296,10 @@
     <script>
         // Configuração das imagens - Altere as URLs conforme necessário
         const config = {
-            coverImage: "https://source.unsplash.com/random/800x600",
-            profileImage: "https://source.unsplash.com/random/400x400",
+            coverImage: "https://i.ibb.co/YW8yt5B/capa.jpg",  // Link da imagem de capa
+            profileImage: "https://i.ibb.co/BBMsSSZ/perfil.jpg",  // Link da imagem de perfil
             previewImages: [
                 "https://source.unsplash.com/random/300x300?1",
                 "https://source.unsplash.com/random/300x300?2",
                 "https://source.unsplash.com/random/300x300?3",
-                "https://source.unsplash.com/random/300x300?4"
-            ]
-        };
-
-        const plans = [
-            {
-                id: '1',
-                name: 'MENSAL VIP',
-                price: 'R$29,90',
-                period: 'month',
-                url: 'https://pay.kirvano.com/eeba3c91-de80-4eec-9a55-396ccc38cf8a'
-            },
-            {
-                id: '2',
-                name: 'TRIMESTRAL VIP',
-                price: 'R$47,76',
-                period: '3months',
-                url: 'https://pay.kirvano.com/03ddd11e-a77a-46ab-9e48-3ec5ed83608a'
-            },
-            {
-                id: '3',
-                name: 'SEMESTRAL VIP',
-                price: 'R$86,58',
-                period: '6months',
-                url: 'https://pay.kirvano.com/7148bbdf-42c4-4c4f-88f1-ad7fecf4af3a'
-            }
-        ];
-
-        // Função para lidar com erros de carregamento de imagem
-        function handleImageError(img) {
-            img.onerror = null;
-            img.src = `https://via.placeholder.com/${img.classList.contains('cover-image') ? '800x600' : '300x300'}?text=Image+Not+Found`;
-        }
-
-        // Inicializar imagens
-        document.getElementById('coverImage').src = config.coverImage;
-        document.getElementById('profileImage').src = config.profileImage;
-
-        // Criar grid de previews
-        const previewGrid = document.getElementById('previewGrid');
-        config.previewImages.forEach(url => {
-            const img = document.createElement('img');
-            img.src = url;
-            img.alt = '';
-            img.className = 'preview-image';
-            img.onerror = function() { handleImageError(this); };
-            previewGrid.appendChild(img);
-        });
-
-        function showPlans() {
-            const remainingSpots = Math.floor(Math.random() * 19) + 2;
-            const plansContainer = document.getElementById('plansContainer');
-            
-            const plansHTML = `
-                <div class="subscription-header">
-                    <h2 class="subscription-title">ASSINATURA VIP</h2>
-                    <p class="subscription-offer">🔥 50% OFF - Promoção por tempo limitado</p>
-                </div>
-                <div class="spots-remaining">
-                    ⚡️ Últimas ${remainingSpots} vagas com desconto
-                </div>
-                <div>
-                    ${plans.map(plan => `
-                        <a href="${plan.url}" class="plan-button">
-                            ${plan.name}<br>
-                            <span class="price">${plan.price}</span>
-                        </a>
-                    `).join('')}
-                </div>
-                <div class="timer">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <p>Promoção termina em 25 de dezembro!</p>
-                </div>
-            `;
-            
-            plansContainer.innerHTML = plansHTML;
-        }
-    </script>
-</body>
-</html>
+                "https://source.unsplash.com/random/300x300
