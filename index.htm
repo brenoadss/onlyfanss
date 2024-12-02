@@ -66,8 +66,8 @@
 
         .profile-header {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: row;
+            align-items: flex-start;
             margin-bottom: 20px;
         }
 
@@ -77,15 +77,14 @@
             border-radius: 50%;
             border: 3px solid #fff;
             object-fit: cover;
-            margin-bottom: 16px;
+            margin-right: 16px;
         }
 
         .profile-info {
-            width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            text-align: left;
         }
 
         .profile-name {
@@ -100,7 +99,7 @@
             font-size: 16px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 8px;
             margin-bottom: 16px;
         }
@@ -115,7 +114,7 @@
 
         .profile-stats {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 32px;
             margin-top: 16px;
             color: #666;
@@ -137,7 +136,7 @@
         }
 
         .profile-description {
-            text-align: center;
+            text-align: left;
             margin: 24px 0;
             font-size: 15px;
             line-height: 1.6;
@@ -267,7 +266,10 @@
         
         <div class="profile-section">
             <div class="profile-header">
+                <!-- Foto de Perfil à Esquerda -->
                 <img src="https://i.ibb.co/gPbP9vx/IMG-20241127-095123-100.webp" alt="Gabriela Santana" class="profile-image">
+
+                <!-- Informações do Perfil à Direita e Abaixo da Foto -->
                 <div class="profile-info">
                     <h1 class="profile-name">Gabriela Santana</h1>
                     <p class="profile-username">
