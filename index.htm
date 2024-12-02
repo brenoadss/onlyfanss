@@ -185,12 +185,12 @@ document.addEventListener('gestureend', function (e) {
         }
         .header-container {
             background-color: #007BFF; /* Cor azul para o retângulo acima */
-            padding: 10px 0; /* Padding para o retângulo */
+            padding: 5px 0; /* Padding para o retângulo */
         }
         .header {
             background-color: white; /* Cor de fundo branca */
             color: black; /* Cor do texto */
-            padding: 10px 0; /* Diminuindo o padding para reduzir a altura */
+            padding: 5px 0; /* Diminuindo o padding para reduzir a altura */
             text-align: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
@@ -206,17 +206,18 @@ document.addEventListener('gestureend', function (e) {
             display: flex;
             flex-wrap: wrap; /* Permite que os links se movam para a próxima linha */
             justify-content: center; /* Centraliza os links */
-            margin-top: 10px;
+            margin-top: 5px; /* Reduzindo o espaço acima dos links */
         }
         .nav-links a {
             color: black; /* Cor do texto dos links */
             text-decoration: none;
-            padding: 8px 12px; /* Ajustando o padding dos links */
+            padding: 5px 10px; /* Ajustando o padding dos links */
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
-            margin: 5px; /* Espaçamento entre os links */
-            flex: 0 1 calc(50% - 10px); /* Cada link ocupa 50% da largura menos a margem */
+            margin: 2px; /* Espaçamento entre os links reduzido */
+            flex: 0 1 calc(50% - 4px); /* Cada link ocupa 50% da largura menos a margem */
             box-sizing: border-box; /* Inclui padding e margin no cálculo da largura */
+            font-weight: bold; /* Nomes em negrito */
         }
         .nav-links a:hover {
             background-color: #2c2c2c; /* Cor de fundo ao passar o mouse */
@@ -225,7 +226,7 @@ document.addEventListener('gestureend', function (e) {
         }
         @media (max-width: 600px) {
             .nav-links a {
-                flex: 0 1 calc(50% - 10px); /* Mantém a largura de 50% em telas menores */
+                flex: 0 1 calc(50% - 4px); /* Mantém a largura de 50% em telas menores */
             }
         }
     </style>
