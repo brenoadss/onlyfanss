@@ -66,41 +66,46 @@
 
         .profile-header {
             display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 16px;
+            flex-direction: column;
+            align-items: center;
             margin-bottom: 20px;
         }
 
         .profile-image {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             border: 3px solid #fff;
             object-fit: cover;
-            flex-shrink: 0;
+            margin-bottom: 20px;
         }
 
         .profile-info {
-            flex: 1;
-            text-align: left;
-            padding-top: 8px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .profile-name {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
             color: #000;
+            width: 100%;
+            text-align: center;
         }
 
         .profile-username {
             color: #666;
-            font-size: 14px;
+            font-size: 16px;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            width: 100%;
         }
 
         .verified-badge {
@@ -108,19 +113,22 @@
             display: flex;
             align-items: center;
             gap: 4px;
-            font-size: 13px;
+            font-size: 14px;
         }
 
         .profile-stats {
             display: flex;
-            gap: 24px;
-            margin-top: 12px;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 16px;
             color: #666;
             font-size: 14px;
+            width: 100%;
         }
 
         .stat {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 4px;
         }
@@ -128,12 +136,12 @@
         .stat-value {
             color: #000;
             font-weight: 600;
-            margin-right: 4px;
+            font-size: 16px;
         }
 
         .profile-description {
-            text-align: left;
-            margin: 20px 0;
+            text-align: center;
+            margin: 24px 0;
             font-size: 15px;
             line-height: 1.6;
             color: #333;
@@ -271,7 +279,7 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                             </svg>
-                            Verificado
+                            Verificada
                         </span>
                     </p>
                     <div class="profile-stats">
