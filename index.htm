@@ -200,15 +200,9 @@ document.addEventListener('gestureend', function (e) {
         }
         .nav-links {
             display: flex;
-            flex-direction: column; /* Alinha os links em coluna */
-            align-items: center; /* Centraliza os links */
+            flex-wrap: wrap; /* Permite que os links se movam para a próxima linha */
+            justify-content: center; /* Centraliza os links */
             margin-top: 10px;
-        }
-        .nav-links .row {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 5px 0; /* Espaçamento entre as linhas */
         }
         .nav-links a {
             color: white;
@@ -216,15 +210,17 @@ document.addEventListener('gestureend', function (e) {
             padding: 10px 15px;
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
+            margin: 5px; /* Espaçamento entre os links */
+            flex: 0 1 calc(50% - 10px); /* Cada link ocupa 50% da largura menos a margem */
+            box-sizing: border-box; /* Inclui padding e margin no cálculo da largura */
         }
         .nav-links a:hover {
             background-color: #2c2c2c; /* Cor de fundo ao passar o mouse */
             transform: scale(1.05);
         }
         @media (max-width: 600px) {
-            .nav-links .row {
-                flex-direction: column; /* Alinha os links em coluna em telas menores */
-                gap: 15px;
+            .nav-links a {
+                flex: 0 1 calc(50% - 10px); /* Mantém a largura de 50% em telas menores */
             }
         }
     </style>
@@ -233,19 +229,15 @@ document.addEventListener('gestureend', function (e) {
     <div class="header">
         <h1>OnlyFans <span>©</span> 2024</h1>
         <div class="nav-links">
-            <div class="row">
-                <a href="#contato">Contato</a>
-                <a href="#ajuda">Ajuda</a>
-                <a href="#blog">Blog</a>
-                <a href="#loja">Loja</a>
-            </div>
-            <div class="row">
-                <a href="#privacidade">Privacidade</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#marca">Marca</a>
-                <a href="#termos">Termos de Serviço</a>
-                <a href="#reclamacoes">Política de Reclamações</a>
-            </div>
+            <a href="#contato">Contato</a>
+            <a href="#ajuda">Ajuda</a>
+            <a href="#blog">Blog</a>
+            <a href="#loja">Loja</a>
+            <a href="#privacidade">Privacidade</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#marca">Marca</a>
+            <a href="#termos">Termos de Serviço</a>
+            <a href="#reclamacoes">Política de Reclamações</a>
         </div>
     </div>
 </body>
