@@ -26,35 +26,54 @@
         }
 
         .container {
-            max-width: 480px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0;
             position: relative;
         }
 
+        .cover-wrapper {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
         .cover-image {
             width: 100%;
-            height: 70vh;
+            height: 100%;
             object-fit: cover;
             display: block;
         }
 
+        .cover-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.9));
+        }
+
         .profile-section {
-            margin-top: -80px;
+            margin-top: -100px;
             position: relative;
-            padding: 0 20px;
+            padding: 0 24px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .profile-header {
             display: flex;
             align-items: flex-end;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 24px;
+            margin-bottom: 24px;
         }
 
         .profile-image {
-            width: 120px;
-            height: 120px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             border: 4px solid #000;
             object-fit: cover;
@@ -65,90 +84,102 @@
         }
 
         .profile-name {
-            font-size: 24px;
+            font-size: 32px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .profile-username {
             color: #a8a8a8;
-            font-size: 15px;
+            font-size: 16px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
         }
 
-        .online-badge {
-            background: #00aff4;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .profile-stats {
-            display: flex;
-            gap: 24px;
-            margin-top: 12px;
-            color: #a8a8a8;
-            font-size: 14px;
-        }
-
-        .stat {
+        .verified-badge {
+            color: #00aff4;
             display: flex;
             align-items: center;
             gap: 4px;
         }
 
-        .profile-description {
-            margin: 20px 0;
+        .profile-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 16px;
+            color: #ffffff;
             font-size: 15px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stat-value {
+            font-weight: 600;
+        }
+
+        .stat-label {
+            color: #a8a8a8;
+        }
+
+        .profile-description {
+            margin: 24px 0;
+            font-size: 16px;
             line-height: 1.6;
             color: #e4e4e4;
+            max-width: 600px;
         }
 
         .subscription-section {
             background: #1a1a1a;
-            border-radius: 16px;
-            padding: 24px;
-            margin: 20px 0;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 24px 0;
+            max-width: 600px;
         }
 
         .subscription-header {
-            text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .subscription-title {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 600;
             margin-bottom: 8px;
+            color: #ffffff;
         }
 
-        .subscription-offer {
+        .subscription-price {
+            font-size: 32px;
+            font-weight: 700;
             color: #00aff4;
-            font-weight: 500;
-        }
-
-        .preview-content {
-            text-align: center;
-            margin: 24px 0;
-        }
-
-        .preview-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
             margin: 16px 0;
         }
 
-        .preview-image {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border-radius: 8px;
-            filter: blur(8px);
+        .subscription-period {
+            font-size: 14px;
+            color: #a8a8a8;
+        }
+
+        .features-list {
+            margin: 24px 0;
+            list-style: none;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: #e4e4e4;
+        }
+
+        .feature-icon {
+            color: #00aff4;
         }
 
         .subscribe-button {
@@ -160,7 +191,7 @@
             border-radius: 8px;
             border: none;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
             transition: all 0.2s;
         }
 
@@ -169,215 +200,182 @@
             transform: translateY(-1px);
         }
 
-        .plan-button {
-            display: block;
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .media-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .media-item img {
             width: 100%;
-            background: #00aff4;
-            color: white;
-            font-weight: 600;
-            padding: 16px;
-            border-radius: 8px;
-            text-decoration: none;
-            text-align: center;
-            margin-bottom: 12px;
-            transition: all 0.2s;
-            font-size: 16px;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(20px);
         }
 
-        .plan-button:hover {
-            background: #0095d4;
-            transform: translateY(-1px);
-        }
-
-        .plan-button .price {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .timer {
+        .media-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            color: #a8a8a8;
-            margin-top: 24px;
-            font-size: 14px;
         }
 
-        .spots-remaining {
-            background: #2d2d2d;
-            color: #fff;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 15px;
+        .lock-icon {
+            font-size: 24px;
+            color: #ffffff;
         }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
 
-        .recording-dot {
-            width: 8px;
-            height: 8px;
-            background: #ff375f;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 6px;
-            animation: pulse 2s infinite;
-        }
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
 
-        .error-image {
-            background: #2d2d2d;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #a8a8a8;
-            font-size: 14px;
+            .profile-stats {
+                justify-content: center;
+            }
+
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="" alt="" class="cover-image" id="coverImage" onerror="handleImageError(this)">
+        <div class="cover-wrapper">
+            <img src="https://i.ibb.co/3FPSBGY/IMG-20241104-070835-782.jpg" alt="" class="cover-image" onerror="this.src='https://via.placeholder.com/1200x400'">
+            <div class="cover-gradient"></div>
+        </div>
         
         <div class="profile-section">
             <div class="profile-header">
-                <img src="" alt="Gabriela Santana" class="profile-image" id="profileImage" onerror="handleImageError(this)">
+                <img src="https://i.ibb.co/gPbP9vx/IMG-20241127-095123-100.webp" alt="Gabriela Santana" class="profile-image" onerror="this.src='https://via.placeholder.com/180'">
                 <div class="profile-info">
                     <h1 class="profile-name">Gabriela Santana</h1>
                     <p class="profile-username">
-                        @_gabriella.wnx
-                        <span class="online-badge">
-                            <span class="recording-dot"></span>
-                            Online
+                        @veronicaperassotv
+                        <span class="verified-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                            </svg>
+                            Verified
                         </span>
                     </p>
                     <div class="profile-stats">
                         <div class="stat">
-                            <span>1.2K</span>
-                            <span>Posts</span>
+                            <span class="stat-value">1.2K</span>
+                            <span class="stat-label">Posts</span>
                         </div>
                         <div class="stat">
-                            <span>258K</span>
-                            <span>Likes</span>
+                            <span class="stat-value">258K</span>
+                            <span class="stat-label">Likes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">125K</span>
+                            <span class="stat-label">Fans</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <p class="profile-description">
-                🔥 Conteúdo exclusivo e sensual | 💋 Chat 24h | 🎥 Lives quentes toda semana | 📸 Fotos e vídeos para te enlouquecer.
+                🌟 Criador Top 0,1% | 📸 Conteúdo Exclusivo | 💋 Postagens Diárias | 🎥 Vídeos Sob Encomenda
+                <br><br>
+                Assine para conteúdo exclusivo e interação personalizada! 💕
             </p>
 
-            <div class="subscription-section" id="plansContainer">
+            <div class="subscription-section">
                 <div class="subscription-header">
-                    <h2 class="subscription-title">ASSINATURA VIP</h2>
-                    <p class="subscription-offer">🔥 50% OFF - Promoção por tempo limitado</p>
+                    <h2 class="subscription-title">Assinatura VIP</h2>
+                    <div class="subscription-price">
+                        R$29,90
+                        <span class="subscription-period">/month</span>
+                    </div>
                 </div>
 
-                <div class="preview-content">
-                    <div class="preview-grid" id="previewGrid"></div>
-                    <button class="subscribe-button" onclick="showPlans()">
-                        ACESSAR CONTEÚDO VIP
-                    </button>
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        Acesso total a todo o conteúdo
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        Mensagens diretas
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        Transmissões ao vivo exclusivas
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        Pedidos de conteúdo personalizado
+                    </li>
+                </ul>
+
+                <button class="subscribe-button">Assine Agora</button>
+            </div>
+
+            <div class="media-grid">
+                <div class="media-item">
+                    <img src="https://i.ibb.co/XVQtVwn/IMG-20241202-033858-531.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <div class="media-overlay">
+                        <span class="lock-icon">🔒</span>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img src="https://i.ibb.co/9W8nZWs/IMG-20241201-152701-848.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <div class="media-overlay">
+                        <span class="lock-icon">🔒</span>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img src="https://i.ibb.co/0qDbNf8/IMG-20241112-215554-311.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <div class="media-overlay">
+                        <span class="lock-icon">🔒</span>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img src="https://i.ibb.co/7gFFB27/IMG-20241107-072830-158.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <div class="media-overlay">
+                        <span class="lock-icon">🔒</span>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img src="https://i.ibb.co/1r2XWj3/Pics-by-Telegram-onlyforfan-online-151.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <div class="media-overlay">
+                        <span class="lock-icon">🔒</span>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img src="https://i.ibb.co/g9JNLh4/Pics-by-Telegram-onlyforfan-online-63.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <div class="media-overlay">
+                        <span class="lock-icon">🔒</span>
+
+<button class="subscribe-button">Inscreve-te para ver as publicações do utilizador</button> </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        // Configuração das imagens - Altere as URLs conforme necessário
-        const config = {
-            coverImage: "https://i.ibb.co/3B0N2WY/Design-sem-nome-1.jpg",
-            profileImage: "https://i.ibb.co/QMt7P83/IMG-20241106-052107-997.webp",
-            previewImages: [
-                "https://i.ibb.co/9W8nZWs/IMG-20241201-152701-848.jpg",
-                "https://i.ibb.co/0qDbNf8/IMG-20241112-215554-311.jpg",
-                "https://i.ibb.co/6JhfwZ2/IMG-20241108-102244-240.jpg",
-                "https://i.ibb.co/7gFFB27/IMG-20241107-072830-158.jpg"
-            ]
-        };
-
-        const plans = [
-            {
-                id: '1',
-                name: 'MENSAL VIP',
-                price: 'R$29,90',
-                period: 'month',
-                url: 'https://pay.kirvano.com/eeba3c91-de80-4eec-9a55-396ccc38cf8a'
-            },
-            {
-                id: '2',
-                name: 'TRIMESTRAL VIP',
-                price: 'R$47,76',
-                period: '3months',
-                url: 'https://pay.kirvano.com/03ddd11e-a77a-46ab-9e48-3ec5ed83608a'
-            },
-            {
-                id: '3',
-                name: 'SEMESTRAL VIP',
-                price: 'R$86,58',
-                period: '6months',
-                url: 'https://pay.kirvano.com/7148bbdf-42c4-4c4f-88f1-ad7fecf4af3a'
-            }
-        ];
-
-        // Função para lidar com erros de carregamento de imagem
-        function handleImageError(img) {
-            img.onerror = null;
-            img.src = `https://via.placeholder.com/${img.classList.contains('cover-image') ? '800x600' : '300x300'}?text=Image+Not+Found`;
-        }
-
-        // Inicializar imagens
-        document.getElementById('coverImage').src = config.coverImage;
-        document.getElementById('profileImage').src = config.profileImage;
-
-        // Criar grid de previews
-        const previewGrid = document.getElementById('previewGrid');
-        config.previewImages.forEach(url => {
-            const img = document.createElement('img');
-            img.src = url;
-            img.alt = '';
-            img.className = 'preview-image';
-            img.onerror = function() { handleImageError(this); };
-            previewGrid.appendChild(img);
-        });
-
-        function showPlans() {
-            const remainingSpots = Math.floor(Math.random() * 19) + 2;
-            const plansContainer = document.getElementById('plansContainer');
-            
-            const plansHTML = `
-                <div class="subscription-header">
-                    <h2 class="subscription-title">ASSINATURA VIP</h2>
-                    <p class="subscription-offer">🔥 50% OFF - Promoção por tempo limitado</p>
-                </div>
-                <div class="spots-remaining">
-                    ⚡️ Últimas ${remainingSpots} vagas com desconto
-                </div>
-                <div>
-                    ${plans.map(plan => `
-                        <a href="${plan.url}" class="plan-button">
-                            ${plan.name}<br>
-                            <span class="price">${plan.price}</span>
-                        </a>
-                    `).join('')}
-                </div>
-                <div class="timer">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <p>Promoção termina em 25 de dezembro!</p>
-                </div>
-            `;
-            
-            plansContainer.innerHTML = plansHTML;
-        }
-    </script>
 </body>
 </html>
