@@ -229,16 +229,24 @@
             margin-right: 6px;
             animation: pulse 2s infinite;
         }
+
+        .error-image {
+            background: #2d2d2d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a8a8a8;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://ibb.co/yW8yt5B
-https://ibb.co/BBMsSSZ" alt="" class="cover-image">
+        <img src="" alt="" class="https://ibb.co/yW8yt5B" id="coverImage" onerror="handleImageError(this)">
         
         <div class="profile-section">
             <div class="profile-header">
-                <img src="https://ibb.co/BBMsSSZ" alt="Gabriela Santana" class="profile-image">
+                <img src="" alt="Gabriela Santana" class="https://ibb.co/BBMsSSZ" id="profileImage" onerror="handleImageError(this)">
                 <div class="profile-info">
                     <h1 class="profile-name">Gabriela Santana</h1>
                     <p class="profile-username">
@@ -276,12 +284,7 @@ https://ibb.co/BBMsSSZ" alt="" class="cover-image">
                 </div>
 
                 <div class="preview-content">
-                    <div class="preview-grid">
-                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&q=80" alt="" class="preview-image">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80" alt="" class="preview-image">
-                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&q=80" alt="" class="preview-image">
-                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80" alt="" class="preview-image">
-                    </div>
+                    <div class="preview-grid" id="previewGrid"></div>
                     <button class="subscribe-button" onclick="showPlans()">
                         ACESSAR CONTEÚDO VIP
                     </button>
@@ -291,6 +294,18 @@ https://ibb.co/BBMsSSZ" alt="" class="cover-image">
     </div>
 
     <script>
+        // Configuração das imagens - Altere as URLs conforme necessário
+        const config = {
+            coverImage: "https://source.unsplash.com/random/800x600",
+            profileImage: "https://source.unsplash.com/random/400x400",
+            previewImages: [
+                "https://source.unsplash.com/random/300x300?1",
+                "https://source.unsplash.com/random/300x300?2",
+                "https://source.unsplash.com/random/300x300?3",
+                "https://source.unsplash.com/random/300x300?4"
+            ]
+        };
+
         const plans = [
             {
                 id: '1',
@@ -314,6 +329,27 @@ https://ibb.co/BBMsSSZ" alt="" class="cover-image">
                 url: 'https://pay.kirvano.com/7148bbdf-42c4-4c4f-88f1-ad7fecf4af3a'
             }
         ];
+
+        // Função para lidar com erros de carregamento de imagem
+        function handleImageError(img) {
+            img.onerror = null;
+            img.src = `https://via.placeholder.com/${img.classList.contains('cover-image') ? '800x600' : '300x300'}?text=Image+Not+Found`;
+        }
+
+        // Inicializar imagens
+        document.getElementById('coverImage').src = config.coverImage;
+        document.getElementById('profileImage').src = config.profileImage;
+
+        // Criar grid de previews
+        const previewGrid = document.getElementById('previewGrid');
+        config.previewImages.forEach(url => {
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = '';
+            img.className = 'preview-image';
+            img.onerror = function() { handleImageError(this); };
+            previewGrid.appendChild(img);
+        });
 
         function showPlans() {
             const remainingSpots = Math.floor(Math.random() * 19) + 2;
