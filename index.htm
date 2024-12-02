@@ -26,7 +26,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 480px;
             margin: 0 auto;
             padding: 0;
             position: relative;
@@ -35,7 +35,7 @@
         .cover-wrapper {
             position: relative;
             width: 100%;
-            height: 400px;
+            height: 70vh;
             overflow: hidden;
         }
 
@@ -51,50 +51,51 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 200px;
+            height: 50%;
             background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.9));
         }
 
         .profile-section {
-            margin-top: -100px;
+            margin-top: -80px;
             position: relative;
-            padding: 0 24px;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
+            padding: 0 16px;
         }
 
         .profile-header {
             display: flex;
-            align-items: flex-end;
-            gap: 24px;
-            margin-bottom: 24px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .profile-image {
-            width: 180px;
-            height: 180px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 4px solid #000;
+            border: 3px solid #000;
             object-fit: cover;
+            margin-bottom: 16px;
         }
 
         .profile-info {
-            flex: 1;
+            width: 100%;
         }
 
         .profile-name {
-            font-size: 32px;
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .profile-username {
             color: #a8a8a8;
-            font-size: 16px;
+            font-size: 15px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
         }
 
         .verified-badge {
@@ -102,62 +103,60 @@
             display: flex;
             align-items: center;
             gap: 4px;
+            font-size: 14px;
         }
 
         .profile-stats {
             display: flex;
-            gap: 32px;
-            margin-top: 16px;
-            color: #ffffff;
-            font-size: 15px;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 12px;
+            color: #a8a8a8;
+            font-size: 14px;
         }
 
         .stat {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 4px;
         }
 
         .stat-value {
+            color: #ffffff;
             font-weight: 600;
-        }
-
-        .stat-label {
-            color: #a8a8a8;
+            margin-right: 4px;
         }
 
         .profile-description {
-            margin: 24px 0;
-            font-size: 16px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 15px;
             line-height: 1.6;
             color: #e4e4e4;
-            max-width: 600px;
         }
 
         .subscription-section {
             background: #1a1a1a;
-            border-radius: 12px;
-            padding: 32px;
-            margin: 24px 0;
-            max-width: 600px;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 20px 0;
         }
 
         .subscription-header {
-            margin-bottom: 24px;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .subscription-title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 600;
-            margin-bottom: 8px;
-            color: #ffffff;
+            margin-bottom: 16px;
         }
 
         .subscription-price {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             color: #00aff4;
-            margin: 16px 0;
         }
 
         .subscription-period {
@@ -176,6 +175,7 @@
             gap: 12px;
             margin-bottom: 16px;
             color: #e4e4e4;
+            font-size: 14px;
         }
 
         .feature-icon {
@@ -191,20 +191,20 @@
             border-radius: 8px;
             border: none;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px;
             transition: all 0.2s;
+            margin-bottom: 20px;
         }
 
         .subscribe-button:hover {
             background: #0095d4;
-            transform: translateY(-1px);
         }
 
         .media-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin: 32px 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin: 20px 0;
         }
 
         .media-item {
@@ -218,7 +218,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: blur(20px);
+            filter: blur(8px);
         }
 
         .media-overlay {
@@ -234,48 +234,31 @@
         }
 
         .lock-icon {
-            font-size: 24px;
+            font-size: 20px;
             color: #ffffff;
         }
 
-        @media (max-width: 768px) {
-            .profile-header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .profile-image {
-                width: 140px;
-                height: 140px;
-            }
-
-            .profile-stats {
-                justify-content: center;
-            }
-
-            .media-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .bottom-subscribe {
+            margin: 20px 0 40px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="cover-wrapper">
-            <img src="https://i.ibb.co/3FPSBGY/IMG-20241104-070835-782.jpg" alt="" class="cover-image" onerror="this.src='https://via.placeholder.com/1200x400'">
+            <img src="https://i.ibb.co/3FPSBGY/IMG-20241104-070835-782.jpg" alt="" class="cover-image">
             <div class="cover-gradient"></div>
         </div>
         
         <div class="profile-section">
             <div class="profile-header">
-                <img src="https://i.ibb.co/gPbP9vx/IMG-20241127-095123-100.webp" alt="Gabriela Santana" class="profile-image" onerror="this.src='https://via.placeholder.com/180'">
+                <img src="https://i.ibb.co/gPbP9vx/IMG-20241127-095123-100.webp" alt="Gabriela Santana" class="profile-image">
                 <div class="profile-info">
                     <h1 class="profile-name">Gabriela Santana</h1>
                     <p class="profile-username">
-                        @veronicaperassotv
+                        @_gabriella.wnx
                         <span class="verified-badge">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                             </svg>
                             Verified
@@ -284,15 +267,15 @@
                     <div class="profile-stats">
                         <div class="stat">
                             <span class="stat-value">1.2K</span>
-                            <span class="stat-label">Posts</span>
+                            <span>Posts</span>
                         </div>
                         <div class="stat">
                             <span class="stat-value">258K</span>
-                            <span class="stat-label">Likes</span>
+                            <span>Likes</span>
                         </div>
                         <div class="stat">
                             <span class="stat-value">125K</span>
-                            <span class="stat-label">Fans</span>
+                            <span>Fans</span>
                         </div>
                     </div>
                 </div>
@@ -309,7 +292,7 @@
                     <h2 class="subscription-title">Assinatura VIP</h2>
                     <div class="subscription-price">
                         R$29,90
-                        <span class="subscription-period">/month</span>
+                        <span class="subscription-period">/mês</span>
                     </div>
                 </div>
 
@@ -337,43 +320,45 @@
 
             <div class="media-grid">
                 <div class="media-item">
-                    <img src="https://i.ibb.co/XVQtVwn/IMG-20241202-033858-531.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <img src="https://i.ibb.co/XVQtVwn/IMG-20241202-033858-531.jpg" alt="">
                     <div class="media-overlay">
                         <span class="lock-icon">🔒</span>
                     </div>
                 </div>
                 <div class="media-item">
-                    <img src="https://i.ibb.co/9W8nZWs/IMG-20241201-152701-848.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <img src="https://i.ibb.co/9W8nZWs/IMG-20241201-152701-848.jpg" alt="">
                     <div class="media-overlay">
                         <span class="lock-icon">🔒</span>
                     </div>
                 </div>
                 <div class="media-item">
-                    <img src="https://i.ibb.co/0qDbNf8/IMG-20241112-215554-311.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <img src="https://i.ibb.co/0qDbNf8/IMG-20241112-215554-311.jpg" alt="">
                     <div class="media-overlay">
                         <span class="lock-icon">🔒</span>
                     </div>
                 </div>
                 <div class="media-item">
-                    <img src="https://i.ibb.co/7gFFB27/IMG-20241107-072830-158.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <img src="https://i.ibb.co/7gFFB27/IMG-20241107-072830-158.jpg" alt="">
                     <div class="media-overlay">
                         <span class="lock-icon">🔒</span>
                     </div>
                 </div>
                 <div class="media-item">
-                    <img src="https://i.ibb.co/1r2XWj3/Pics-by-Telegram-onlyforfan-online-151.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <img src="https://i.ibb.co/1r2XWj3/Pics-by-Telegram-onlyforfan-online-151.jpg" alt="">
                     <div class="media-overlay">
                         <span class="lock-icon">🔒</span>
                     </div>
                 </div>
                 <div class="media-item">
-                    <img src="https://i.ibb.co/g9JNLh4/Pics-by-Telegram-onlyforfan-online-63.jpg" alt="" onerror="this.src='https://via.placeholder.com/300'">
+                    <img src="https://i.ibb.co/g9JNLh4/Pics-by-Telegram-onlyforfan-online-63.jpg" alt="">
                     <div class="media-overlay">
                         <span class="lock-icon">🔒</span>
-
-<button class="subscribe-button">Inscreve-te para ver as publicações do utilizador</button> </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="bottom-subscribe">
+                <button class="subscribe-button">Inscreve-te para ver as publicações do utilizador</button>
             </div>
         </div>
     </div>
