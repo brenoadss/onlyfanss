@@ -200,10 +200,15 @@ document.addEventListener('gestureend', function (e) {
         }
         .nav-links {
             display: flex;
+            flex-direction: column; /* Alinha os links em coluna */
+            align-items: center; /* Centraliza os links */
+            margin-top: 10px;
+        }
+        .nav-links .row {
+            display: flex;
             justify-content: center;
             gap: 30px;
-            margin-top: 10px;
-            flex-wrap: wrap;
+            margin: 5px 0; /* Espaçamento entre as linhas */
         }
         .nav-links a {
             color: white;
@@ -217,8 +222,8 @@ document.addEventListener('gestureend', function (e) {
             transform: scale(1.05);
         }
         @media (max-width: 600px) {
-            .nav-links {
-                flex-direction: column;
+            .nav-links .row {
+                flex-direction: column; /* Alinha os links em coluna em telas menores */
                 gap: 15px;
             }
         }
@@ -228,15 +233,19 @@ document.addEventListener('gestureend', function (e) {
     <div class="header">
         <h1>OnlyFans <span>©</span> 2024</h1>
         <div class="nav-links">
-            <a href="#contato">Contato</a>
-            <a href="#ajuda">Ajuda</a>
-            <a href="#blog">Blog</a>
-            <a href="#loja">Loja</a>
-            <a href="#privacidade">Privacidade</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#marca">Marca</a>
-            <a href="#termos">Termos de Serviço</a>
-            <a href="#reclamacoes">Política de Reclamações</a>
+            <div class="row">
+                <a href="#contato">Contato</a>
+                <a href="#ajuda">Ajuda</a>
+                <a href="#blog">Blog</a>
+                <a href="#loja">Loja</a>
+            </div>
+            <div class="row">
+                <a href="#privacidade">Privacidade</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#marca">Marca</a>
+                <a href="#termos">Termos de Serviço</a>
+                <a href="#reclamacoes">Política de Reclamações</a>
+            </div>
         </div>
     </div>
 </body>
